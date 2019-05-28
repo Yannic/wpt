@@ -231,8 +231,8 @@ async function doSignalingHandshake(localPc, remotePc, options={}) {
   }
 
   // Apply offer
-  await localPc.setLocalDescription(offer);
   await remotePc.setRemoteDescription(offer);
+  await localPc.setLocalDescription(offer);
 
   let answer = await remotePc.createAnswer();
   // Modify answer if callback has been provided
